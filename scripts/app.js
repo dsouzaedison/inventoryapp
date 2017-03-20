@@ -1,4 +1,5 @@
-angular.module('myApp',['route'])
-.controller('myCtrl', function ($scope, appConfig) {
+angular.module('inventory',['route'])
+.controller('inventoryCtrl', function ($scope, appConfig) {
     //Controller Code
+
 });
