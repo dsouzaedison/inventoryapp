@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4c5bbdc1-e114-4211-8a92-9f03c52ca4d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/app.js" afterPath="$PROJECT_DIR$/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/config/config.js" afterPath="$PROJECT_DIR$/scripts/config/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/routes.js" afterPath="$PROJECT_DIR$/scripts/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/app.css" afterPath="$PROJECT_DIR$/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/dashboard.html" afterPath="$PROJECT_DIR$/templates/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/edit.html" afterPath="$PROJECT_DIR$/templates/edit.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -346,7 +339,7 @@
       <option name="presentableId" value="Default" />
       <updated>1489993714090</updated>
       <workItem from="1489993716701" duration="16459000" />
-      <workItem from="1490016224233" duration="19089000" />
+      <workItem from="1490016224233" duration="19209000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1489994465364</created>
@@ -383,11 +376,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490023544614</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Features Updated">
+      <created>1490038489146</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1490038489146</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35548000" />
+    <option name="totallyTimeSpent" value="35668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -423,7 +423,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Initial UI" />
     <MESSAGE value="UI Updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI Updated" />
+    <MESSAGE value="Features Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Features Updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
