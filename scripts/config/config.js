@@ -1,4 +1,5 @@
 angular.module('inventory')
     .constant('appConfig', {
-        appName: 'myApp'
+        appName: 'Inventory',
+        serverUrl: 'http://127.0.0.1:80/inventory'
     });

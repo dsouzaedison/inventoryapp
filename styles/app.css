@@ -6,7 +6,44 @@ body {
     color: #fff;
     background: url("../images/bg.jpg") no-repeat;
     background-size: 120vw 104vh;
-    font-size: 14px;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+@media only screen and (min-width: 800px) {
+    .ng-view {
+        display: none;
+    }
+
+    .error {
+        background: url("../images/error-bg.jpg");
+        background-size: 100% 100%;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .card-dark {
+        /*height: 200px;*/
+        width: 500px;
+        background: rgba(0, 0, 0, 0.7);
+        margin: 0 auto;
+        color: #fff;
+        padding: 25px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .table {
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .error {
+        display: none;
+    }
 }
 
 .logo {
@@ -36,6 +73,8 @@ body {
 
 .table {
     display: table;
+    margin: 0;
+    padding: 0;
 }
 
 .table-cell {
@@ -58,7 +97,7 @@ body {
 .input-text {
     width: 100%;
     border: none;
-    height: 30px;
+    height: 35px;
     padding: 0 8px;
     border-radius: 2px;
     color: #9a9797;
@@ -73,7 +112,7 @@ body {
 .btn-orange {
     width: 100%;
     border: none;
-    height: 30px;
+    height: 35px;
     padding: 5px;
     margin: 8px 0;
     color: #fff;
@@ -124,7 +163,7 @@ h5 {
 .menu {
     padding: 10px;
     color: #fff;
-    text-align: right;
+    text-align: center;
 }
 
 .active {
@@ -132,9 +171,10 @@ h5 {
 }
 
 .menu-edit {
-    border-left: 1px solid #fff;
-    padding-left: 5px;
-    font-size: 90%;
+    font-size: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .line {
@@ -144,7 +184,7 @@ h5 {
     overflow: hidden;
     text-align: center;
     width: 80%;
-    margin: auto;
+    margin: 5px auto;
     color: #fff;
 }
 
@@ -183,12 +223,14 @@ h5 {
 }
 
 .tag-header {
-    background-color: rgba(85, 85, 85, 0.76);
+    background-color: rgba(76, 175, 80, 0.84);
+    padding: 5px;
 }
 
 .tag-body {
-    background-color: rgba(76, 175, 80, 0.84);
+    background-color: rgba(85, 85, 85, 0.76);
     font-weight: bold;
+    padding: 5px;
 }
 
 .bg-orangered-transparent {
@@ -207,11 +249,17 @@ h5 {
 
 .list {
     padding: 15px;
-    line-height: 2.0;
+    line-height: 2.5;
 }
 
 .list-item:nth-child(even) {
+    color: #fff;
     background: rgba(85, 85, 85, 0.76);
+}
+
+.list-item:nth-child(odd) {
+    color: #555;
+    background: rgba(255, 255, 255, 0.76);
 }
 
 .width-16 {
@@ -228,4 +276,17 @@ h5 {
 
 .input-filter-date {
     border: 1px solid #eee;
+}
+
+.menu-item {
+    border: 1px solid #fff;
+    padding: 6px;
+}
+
+.menu-item + .active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.active-grey-backdrop {
+    background: rgba(0, 0, 0, 0.5);
 }
