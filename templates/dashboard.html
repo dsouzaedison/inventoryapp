@@ -18,26 +18,42 @@
 </div>
 
 <div class="line">
-    <span class="balance">{{0 | currency: "₹ "}}</span>
+    <span class="balance" ng-class="{'bg-orangered-transparent': total<0}">{{(total<0)?total*-1:total | currency: "₹ "}}</span>
 </div>
 
 <div class="container">
     <div class="expense-log">
-        <h3 class="log-title" data-toggle="modal" data-target="#myModal"><i class="fa fa-calendar"></i> Today</h3>
+        <h3 class="log-title" data-toggle="modal" data-target="#myModal"><i class="fa fa-calendar"></i> {{currentDay}}</h3>
         <div class="row">
             <div class="col-xs-12 col-sm-12">
-                <div class="col-xs-6 col-sm-6 tag-header border-white-xb bg-orangered-transparent text-center"><i class="fa fa-minus-circle width-16"></i> Expense</div>
-                <div class="col-xs-6 col-sm-6 tag-header border-white-xb text-center"><i class="fa fa-money width-16"></i> Income</div>
+                <div class="col-xs-6 col-sm-6 tag-header border-white-xb bg-orangered-transparent text-center"><i
+                        class="fa fa-minus-circle width-16"></i> Expense
+                </div>
+                <div class="col-xs-6 col-sm-6 tag-header border-white-xb text-center"><i
+                        class="fa fa-money width-16"></i> Income
+                </div>
             </div>
             <div class="col-xs-12 col-sm-12">
-                <div class="col-xs-6 col-sm-6 tag-body border-white border-white-xt text-center">{{0 | currency: "₹ "}}</div>
-                <div class="col-xs-6 col-sm-6 tag-body border-white-xt text-center">{{0 | currency: "₹ "}}</div>
+                <div class="col-xs-6 col-sm-6 tag-body border-white border-white-xt text-center">{{currentExpense |
+                    currency: "₹
+                    "}}
+                </div>
+                <div class="col-xs-6 col-sm-6 tag-body border-white-xt text-center">{{currentIncome | currency: "₹ "}}
+                </div>
             </div>
         </div>
         <div class="row list">
-            <div class="col-xs-12 col-sm-12 list-item" ng-repeat="x in [1,2,3,4,5]">
-                <div class="col-xs-6 col-sm-6">{{$index + 1}}. Name Name Name Name</div>
-                <div class="col-xs-6 col-sm-6">{{250 | currency: "₹ "}}</div>
+            <div class="col-xs-12 col-sm-12 list-item {{(item.type == 0)?'debit':'credit'}}" ng-repeat="item in data">
+                <div class="col-xs-6 col-sm-6">
+                    {{$index + 1}}. {{item.name}}
+                    <!--<i class="fa {{(item.type == 0)?'fa-minus-circle':'fa-plus-circle'}}"></i>-->
+                </div>
+                <div class="col-xs-6 col-sm-6">
+                    {{item.amount | currency: "₹ "}}
+                    <div class="pull-right" ng-click="showPrompt(true, item.id)">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -54,10 +70,29 @@
                 <h5 class="modal-title"><i class="fa fa-calendar"></i> Select Date</h5>
             </div>
             <div class="modal-body">
-                <input type="date" placeholder="Date" class="input-text input-filter-date">
-                <button class="btn-orange">Get Info</button>
+                <input type="date" id="newDate" placeholder="Date" class="input-text input-filter-date unstyled" ng-model="newDate">
+                <button class="btn-orange" ng-click="getNewInfo()" data-dismiss="modal">Get Info</button>
             </div>
         </div>
 
+    </div>
+</div>
+
+<!-- PROMPT -->
+<div class="confirm-container table" ng-show="showPrompt()">
+    <div class="table-cell">
+        <div class="confirm-wrapper">
+            <h3 class="confirm-header">Confirm Delete?</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-6">
+                        <button class="btn-orange" ng-click="deleteRow()">Delete</button>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <button class="btn-orange btn-white" ng-click="showPrompt(false)">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

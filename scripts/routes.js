@@ -11,7 +11,8 @@ route.config(function ($routeProvider) {
             controller: 'editCtrl'
         })
         .when("/dashboard", {
-            templateUrl: "templates/dashboard.html"
+            templateUrl: "templates/dashboard.html",
+            controller: 'dashboardCtrl'
         })
         .otherwise({redirectTo :'/'});
 });
