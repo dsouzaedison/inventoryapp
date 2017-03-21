@@ -19,6 +19,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/config/config.js"></script>
     <script src="scripts/appJQ.js"></script>
+    <script src="scripts/app.service.js"></script>
 </head>
 <body ng-controller="inventoryCtrl">
 <div class="error">
@@ -40,6 +41,19 @@
     <div class="table-cell">
         <div class="spinner-wrapper">
             <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        </div>
+    </div>
+</div>
+
+<!--Alert-->
+<div class="alert-container table" ng-show="showAlert()">
+    <div class="table-cell">
+        <div class="alert-wrapper">
+            <div class="alert-header"><i class="fa fa-info-circle"></i> {{getAlertTitle()}}</div>
+            <div class="alert-message">{{getAlertMessage()}}</div>
+            <div class="alert-button-wrapper">
+                <button class="btn-orange alert-button" ng-click="">{{getAlertButton()}}</button>
+            </div>
         </div>
     </div>
 </div>

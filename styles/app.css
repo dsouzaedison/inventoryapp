@@ -344,7 +344,7 @@ h5 {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 20;
     padding: 15px;
 }
 
@@ -371,7 +371,7 @@ h5 {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 20;
     padding: 15px;
 }
 
@@ -382,4 +382,48 @@ h5 {
 
 .bg-grey {
     background: #4c4844 !important;
+}
+
+.alert-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding: 15px;
+}
+
+.alert-wrapper {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.alert-header {
+    padding: 8px;
+    color: #fff;
+    background: #888585;
+    font-size: 150%;
+    border-bottom: 2px solid rgb(245, 245, 245);
+}
+
+.alert-message {
+    font-size: 120%;
+    color: #555555;
+    padding: 15px;
+}
+
+.alert-button-wrapper {
+    padding: 15px;
+}
+
+.bg-848484 {
+    background: #848484 !important;
+}
+
+.bg-e44040 {
+    background: #e44040 !important;
 }

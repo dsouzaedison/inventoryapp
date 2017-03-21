@@ -1,6 +1,23 @@
 angular.module('inventory', ['route'])
-    .controller('inventoryCtrl', function ($scope, $location, $http, appConfig) {
+    .controller('inventoryCtrl', function ($scope, $location, $http, appConfig, app) {
         //Controller Code
+        $scope.getAlertTitle = function () {
+            return app.alertTitle;
+        };
+
+        $scope.getAlertMessage = function () {
+            return app.alertMessage;
+        };
+
+        $scope.getAlertButton = function () {
+            return app.alertButton;
+        };
+
+        $scope.showAlert = function () {
+            return app.showAlert;
+        };
+
+
         $scope.redirectTo = function (link) {
             $location.path(link);
         };
@@ -41,7 +58,7 @@ angular.module('inventory', ['route'])
 
                     appConfig.spinner = false;
                 });
-        }
+        };
     })
     .controller('editCtrl', function ($scope, $http, $location, appConfig) {
         $scope.expense = {
@@ -124,6 +141,7 @@ angular.module('inventory', ['route'])
         $scope.showPromptVal = false;
         $scope.deleteId = null;
         $scope.currentDay = 'Today';
+        $scope.showDatePicker = false;
 
         var date = new Date();
         $scope.today = {
@@ -191,10 +209,13 @@ angular.module('inventory', ['route'])
         };
 
         $scope.getNewInfo = function () {
+            $scope.showDatePicker = false;
             appConfig.spinner = true;
-            document.getElementById("newDate").valueAsDate = null;
-
             var newDate = new Date($scope.newDate);
+            // if (document.getElementById("newDate").type == 'date')
+                document.getElementById("newDate").valueAsDate = null;
+            // else document.getElementById("newDate").value = '';
+
             $scope.newDate = {
                 day: newDate.getDate(),
                 month: newDate.getMonth() + 1,

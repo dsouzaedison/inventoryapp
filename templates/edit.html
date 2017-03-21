@@ -24,7 +24,7 @@
         <div class="add-info">
             <h5><span class="h4 no-margin">Business Expense</span> <i class="fa fa-pencil pull-right fa-money fa-bg-circle"></i></h5>
             <hr class="no-margin">
-            <input type="date" placeholder="Date" ng-model="expense.date" class="input-text unstyled">
+            <input onfocus="(this.type='date')" placeholder="Date" ng-model="expense.date" class="input-text unstyled">
             <input type="text" placeholder="Item" ng-model="expense.tag" class="input-text">
             <input type="text" placeholder="Cost" ng-model="expense.amount" class="input-text">
             <button class="btn-orange" ng-click="addExpense()">Submit</button>
@@ -32,7 +32,7 @@
             <h5 class="margin-t30"><span class="h4 no-margin">Business Income</span> <i class="fa fa-dollar pull-right fa-bg-circle"></i></h5>
             <hr class="no-margin">
 
-            <input type="date" placeholder="Date" ng-model="income.date" class="input-text unstyled">
+            <input onfocus="(this.type='date')" placeholder="Date" ng-model="income.date" class="input-text unstyled">
             <input type="text" placeholder="Income Source" ng-model="income.tag" class="input-text">
             <input type="text" placeholder="Amount" ng-model="income.amount" class="input-text">
             <button class="btn-orange bg-green" ng-click="addIncome()">Add Income</button>

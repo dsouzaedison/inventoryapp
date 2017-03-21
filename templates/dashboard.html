@@ -24,7 +24,7 @@
 <div class="container">
     <div class="expense-log">
         <div class="text-center">
-            <button type="button" class="btn log-title" data-toggle="modal" data-target="#myModal"><i class="fa fa-calendar"></i> {{currentDay}}</button>
+            <button type="button" class="btn log-title" ng-click="showDatePicker=true"><i class="fa fa-calendar"></i> {{currentDay}}</button>
         </div>
 
         <!--<h3 class="log-title" data-toggle="modal" data-target="#myModal"></h3>-->
@@ -64,23 +64,23 @@
 </div>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<!--<div id="myModal" class="modal fade" role="dialog">-->
+    <!--<div class="modal-dialog">-->
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h5 class="modal-title"><i class="fa fa-calendar"></i> Select Date</h5>
-            </div>
-            <div class="modal-body">
-                <input type="date" id="newDate" placeholder="Date" class="input-text input-filter-date unstyled" ng-model="newDate">
-                <button class="btn-orange" ng-click="getNewInfo()" data-dismiss="modal">Get Info</button>
-            </div>
-        </div>
+        <!--&lt;!&ndash; Modal content&ndash;&gt;-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <!--<h5 class="modal-title"><i class="fa fa-calendar"></i> Select Date</h5>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<input onfocus="(this.type='date')" id="newDate" placeholder="Date" class="input-text input-filter-date unstyled" ng-model="newDate">-->
+                <!--<button class="btn-orange" ng-click="getNewInfo()" data-dismiss="modal">Get Info</button>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
-</div>
+    <!--</div>-->
+<!--</div>-->
 
 <!-- PROMPT -->
 <div class="confirm-container table" ng-show="showPrompt()">
@@ -96,6 +96,19 @@
                         <button class="btn-orange btn-white" ng-click="showPrompt(false)">Cancel</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="alert-container table" ng-show="showDatePicker">
+    <div class="table-cell">
+        <div class="alert-wrapper">
+            <div class="alert-header bg-e44040"><i class="fa fa-calendar"></i> Select Date</div>
+            <div class="container">
+                <input type="date" id="newDate" placeholder="Date" class="input-text input-filter-date unstyled" ng-model="newDate">
+                <button class="btn-orange bg-848484" ng-click="getNewInfo()">Submit</button>
             </div>
         </div>
     </div>
