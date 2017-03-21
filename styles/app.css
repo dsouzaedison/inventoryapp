@@ -101,6 +101,7 @@ body {
 }
 
 .input-text {
+    position: relative;
     width: 100%;
     border: none;
     height: 35px;
@@ -226,6 +227,15 @@ h5 {
 
 .log-title {
     text-align: center;
+    margin: 5px auto;
+    color: #fff;
+    background: transparent;
+    font-size: 120%;
+}
+
+.log-title:hover, .log-title:active, .log-title:focus, .log-title:visited  {
+    color: #fff;
+    outline: none;
 }
 
 .tag-header {
@@ -363,4 +373,8 @@ h5 {
 .spinner-wrapper {
     width: 100%;
     border-radius: 5px;
+}
+
+.bg-grey {
+    background: #4c4844 !important;
 }
