@@ -13,6 +13,10 @@ angular.module('inventory', ['route'])
         $scope.user = '';
         $scope.pass = '';
 
+        if (localStorage.getItem("loggedIn"))
+            if (localStorage.loggedIn == 'true')
+                $location.path('/dashboard');
+
         $scope.signIn = function () {
             appConfig.spinner = true;
             $http.post('login.php', {
@@ -24,14 +28,16 @@ angular.module('inventory', ['route'])
             })
                 .then(function (data) {
                     // console.log(data);
-                    if (data.data == "1")
+                    if (data.data == "1") {
+                        localStorage.setItem("loggedIn", 'true');
                         $location.path('/dashboard');
+                    }
 
                     appConfig.spinner = false;
                 });
         }
     })
-    .controller('editCtrl', function ($scope, $http, appConfig) {
+    .controller('editCtrl', function ($scope, $http, $location, appConfig) {
         $scope.expense = {
             date: null,
             tag: '',
@@ -70,6 +76,7 @@ angular.module('inventory', ['route'])
                     appConfig.spinner = false;
                 });
         };
+
         $scope.addIncome = function () {
             appConfig.spinner = true;
             var date = new Date($scope.income.date);
@@ -94,6 +101,15 @@ angular.module('inventory', ['route'])
                     appConfig.spinner = false;
                 });
         };
+
+        $scope.redirectTo = function (link) {
+            $location.path(link);
+        };
+
+        $scope.logout = function () {
+            localStorage.setItem("loggedIn", false);
+            $scope.redirectTo('/');
+        };
     })
     .controller('dashboardCtrl', function ($scope, $http, appConfig) {
         $scope.currentExpense = 0;
@@ -109,6 +125,7 @@ angular.module('inventory', ['route'])
             month: date.getMonth() + 1,
             year: date.getFullYear()
         };
+
         $http.get('get_data.php?day=' + $scope.today.day + '&month=' + $scope.today.month + '&year=' + $scope.today.year)
             .then(function (dataResponse) {
                 // console.log(JSON.stringify(dataResponse.data));

@@ -64,6 +64,10 @@ body {
 }
 
 .titlebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     height: 40px;
     width: 100%;
     background: rgb(162, 51, 10);
@@ -171,6 +175,7 @@ h5 {
     padding-top: 10px;
     color: #fff;
     text-align: center;
+    margin-top: 40px;
 }
 
 .active {
