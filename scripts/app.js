@@ -13,6 +13,12 @@ angular.module('inventory', ['route'])
         $scope.user = '';
         $scope.pass = '';
 
+        if (typeof(Storage) !== "undefined") {
+            // Code for localStorage/sessionStorage.
+        } else {
+            alert('No Storage Support!');
+        }
+
         if (localStorage.getItem("loggedIn"))
             if (localStorage.loggedIn == 'true')
                 $location.path('/dashboard');
