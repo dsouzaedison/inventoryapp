@@ -427,3 +427,7 @@ h5 {
 .bg-e44040 {
     background: #e44040 !important;
 }
+
+.line-height-1x5 {
+    line-height: 1.5;
+}
